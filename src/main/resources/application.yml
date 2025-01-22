@@ -38,3 +38,6 @@ springdoc:
     path: swagger-ui
   api-docs:
     path: /docs
+
+credits-simulation:
+  valid-period-in-minutes: 5
