@@ -1,0 +1,46 @@
+console-reports:
+  active: true
+
+output-reports:
+  active: true
+
+performance:
+  SpreadOperator:
+    excludes:
+      - "**/Application.kt"
+
+style:
+  ReturnCount:
+    active: false
+  NewLineAtEndOfFile:
+    active: false
+  MaxLineLength:
+    active: true
+    maxLineLength: 150
+    excludes: ["**/test/**"]
+  ProtectedMemberInFinalClass:
+    active: false
+  MagicNumber:
+    active: false
+
+exceptions:
+  TooGenericExceptionCaught:
+    active: false
+  InstanceOfCheckForException:
+    active: false
+
+complexity:
+  TooManyFunctions:
+    active: false
+  LongMethod:
+    threshold: 80
+    excludes:
+      - "**/test/**"
+  LongParameterList:
+    constructorThreshold: 10
+    excludes:
+      - "**/test/**"
+
+naming:
+  TopLevelPropertyNaming:
+    active: false

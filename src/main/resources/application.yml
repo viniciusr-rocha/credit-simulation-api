@@ -1,0 +1,40 @@
+server:
+  port: 8080
+
+spring:
+  webflux:
+    base-path: /api
+    multipart:
+      max-in-memory-size: 1MB
+  application:
+    name: credit-simulation-api
+
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/credit_simulations_db
+    username: user
+    password: password
+    pool:
+      initial-size: 10
+      max-size: 20
+
+  flyway:
+    url: jdbc:postgresql://localhost:5432/credit_simulations_db
+    user: user
+    password: password
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    fail-on-missing-locations: true
+    out-of-order: false
+    enabled: false
+
+logging:
+  level:
+    br.com.vinicius: debug
+    root: info
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: swagger-ui
+  api-docs:
+    path: /docs
