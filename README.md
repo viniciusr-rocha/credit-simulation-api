@@ -65,7 +65,9 @@ Siga os passos abaixo para configurar seu ambiente.
 http://localhost:8080/api/webjars/swagger-ui/index.html
 
 ### Collection postman
-
+No endpoint `POST /v1/credit-simulations` possui um pre request script que gera um header Idempotency-Key em SHA256, 
+para simular um client
+<br>
 [credit-simulation-api.postman_collection.json](collection/credit-simulation-api.postman_collection.json)
 
 ### Arquivo CSV com 10k para teste de endpoint
@@ -75,6 +77,9 @@ http://localhost:8080/api/webjars/swagger-ui/index.html
 ### Endpoints Disponíveis:
 
 * `POST /v1/credit-simulations` - Realiza a simulação de crédito de forma unitária.
+<br>
+Para simulação fixa passar o **interestRateType** FIXED e o **annualVariableInterestRate** deve ser null
+
 ```shell
 curl --location 'http://localhost:8080/api/v1/credit-simulations' \
 --header 'Idempotency-Key: any' \
@@ -85,6 +90,21 @@ curl --location 'http://localhost:8080/api/v1/credit-simulations' \
     "customerDateOfBirth": "01/01/1995",
     "paymentTermInMonths": 12,
     "interestRateType": "FIXED"
+}'
+
+Para simulação variavel passar o **interestRateType** VARIABLE e o **annualVariableInterestRate** deve estar preenchido
+
+```shell
+curl --location 'http://localhost:8080/api/v1/credit-simulations' \
+--header 'Idempotency-Key: any-variable' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "email@email.com",
+    "loanAmount": "800000",
+    "customerDateOfBirth": "01/01/1995",
+    "paymentTermInMonths": 12,
+    "interestRateType": "VARIABLE",
+    "annualVariableInterestRate": 5
 }'
   ```
 * `POST /v1/credit-simulations/batch` - Realiza a simulação de crédito em lote por arquivo csv.
