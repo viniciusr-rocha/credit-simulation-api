@@ -18,7 +18,11 @@ class CacheConfig(
     @Bean
     fun caffeineCacheManager(): CacheManager {
         val cacheManager =
-            CaffeineCacheManager("interestRates")
+            CaffeineCacheManager(
+                "interestRates",
+                "creditSimulation",
+                "creditSimulationFile"
+            )
         cacheManager.setCaffeine(caffeineCacheBuilder())
         return cacheManager
     }
