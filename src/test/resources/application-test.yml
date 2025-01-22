@@ -1,0 +1,13 @@
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem://localhost/testdb
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
