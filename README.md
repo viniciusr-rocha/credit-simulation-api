@@ -73,7 +73,23 @@ http://localhost:8080/api/webjars/swagger-ui/index.html
 ### Endpoints Disponíveis:
 
 * `POST /v1/credit-simulations` - Realiza a simulação de crédito de forma unitária.
+```shell
+curl --location 'http://localhost:8080/api/v1/credit-simulations' \
+--header 'Idempotency-Key: any' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "email": "email@email.com",
+    "loanAmount": "800000",
+    "customerDateOfBirth": "01/01/1995",
+    "paymentTermInMonths": 12,
+    "interestRateType": "FIXED"
+}'
+  ```
 * `POST /v1/credit-simulations/batch` - Realiza a simulação de crédito em lote por arquivo csv.
+```shell
+curl --location 'http://localhost:8080/api/v1/credit-simulations/batch' \
+--form 'file=@"caminho-do-file-csv"'
+```
 
 [Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [Java-url]: https://www.java.com/
