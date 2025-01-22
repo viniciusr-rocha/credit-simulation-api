@@ -13,12 +13,12 @@ A aplicação processa entradas de simulação, calcula valores baseados em regr
 
 ---
 
-## Funcionalidades
+## Funcionalidades ⚙️
 - **Simulação de Credito:** Calcula os valores com base nas taxas de juros associadas a idade do cliente ou taxa variável.
 - **Processamento de Arquivos CSV:** Importa e processa simulações de crédito em lote.
 
 
-## Estrutura do Projeto
+## Estrutura do Projeto 🏛
 O projeto segue uma estrutura modular e escalável:
 
 - **Controller:** Camada responsável pela comunicação entre o cliente e os serviços da aplicação (ex.: `CreditSimulationController`).
@@ -28,7 +28,7 @@ O projeto segue uma estrutura modular e escalável:
 - **Exception:** Gerencia erros personalizados para tratamento de validações específicas.
 
 
-## Justificativa da Arquitetura
+## Justificativa da Arquitetura 📐
 1. **Modularidade:** Separação de responsabilidades por camadas, promovendo um design limpo e fácil de entender.
 2. **Escalabilidade:** Permite a adição de novas funcionalidades sem impactar outras áreas da aplicação.
 3. **Manutenibilidade:** A organização facilita a identificação e correção de problemas.
@@ -46,7 +46,7 @@ Siga os passos abaixo para configurar seu ambiente.
 * Java 21
 * Gradle 8.11.1
 
-### Executando a Aplicação ⚙️
+### Executando a Aplicação
 
 1. Inicie a aplicação rodando esse script
    ```sh
