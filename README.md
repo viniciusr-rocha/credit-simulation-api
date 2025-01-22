@@ -6,6 +6,7 @@ A aplicação processa entradas de simulação, calcula valores baseados em regr
 
 ## Tecnologias Utilizadas 🛠️
 
+* [![Kotlin][Kotlin]][Kotlin-url]
 * [![Java][Java]][Java-url]
 * [![Gradle][Gradle]][Gradle-url]
 * [![Swagger][Swagger]][Swagger-url]
@@ -92,6 +93,8 @@ curl --location 'http://localhost:8080/api/v1/credit-simulations/batch' \
 --form 'file=@"caminho-do-file-csv"'
 ```
 
+[Kotlin]: https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=Kotlin&logoColor=white
+[Kotlin-url]: https://kotlinlang.org/
 [Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [Java-url]: https://www.java.com/
 [Spring]: https://img.shields.io/badge/spring_boot-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
