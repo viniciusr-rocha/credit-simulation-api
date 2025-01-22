@@ -78,6 +78,7 @@ para simular um client
 
 * `POST /v1/credit-simulations` - Realiza a simulação de crédito de forma unitária.
 <br>
+
 Para simulação fixa passar o **interestRateType** FIXED e o **annualVariableInterestRate** deve ser null
 
 ```shell
@@ -91,6 +92,7 @@ curl --location 'http://localhost:8080/api/v1/credit-simulations' \
     "paymentTermInMonths": 12,
     "interestRateType": "FIXED"
 }'
+```
 
 Para simulação variavel passar o **interestRateType** VARIABLE e o **annualVariableInterestRate** deve estar preenchido
 
@@ -107,6 +109,7 @@ curl --location 'http://localhost:8080/api/v1/credit-simulations' \
     "annualVariableInterestRate": 5
 }'
   ```
+
 * `POST /v1/credit-simulations/batch` - Realiza a simulação de crédito em lote por arquivo csv.
 ```shell
 curl --location 'http://localhost:8080/api/v1/credit-simulations/batch' \
