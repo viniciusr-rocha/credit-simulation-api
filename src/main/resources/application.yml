@@ -41,3 +41,5 @@ springdoc:
 
 credits-simulation:
   valid-period-in-minutes: 5
+  csv-file:
+    batch-size: 1000

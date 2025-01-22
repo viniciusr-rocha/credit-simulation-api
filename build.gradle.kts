@@ -38,6 +38,7 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:2.8.3")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
     implementation("com.github.ben-manes.caffeine:caffeine")
+    implementation("com.opencsv:opencsv:5.7.1")
 
     runtimeOnly("org.postgresql:r2dbc-postgresql")
     runtimeOnly("org.postgresql:postgresql")
