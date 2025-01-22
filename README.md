@@ -44,7 +44,7 @@ Siga os passos abaixo para configurar seu ambiente.
 
 ### Pré-requisitos 📋
 
-* Docker
+* Docker e plugin docker compose v2
 * Java 21
 * Gradle 8.11.1
 
