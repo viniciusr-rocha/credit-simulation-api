@@ -62,6 +62,14 @@ Siga os passos abaixo para configurar seu ambiente.
 ### Acessando via Swagger
 http://localhost:8080/api/webjars/swagger-ui/index.html
 
+### Collection postman
+
+[credit-simulation-api.postman_collection.json](collection/credit-simulation-api.postman_collection.json)
+
+### Arquivo CSV com 10k para teste de endpoint
+
+[testFile.csv](src/test/resources/testFile.csv)
+
 ### Endpoints Disponíveis:
 
 * `POST /v1/credit-simulations` - Realiza a simulação de crédito de forma unitária.

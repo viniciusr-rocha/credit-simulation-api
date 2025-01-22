@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "e46ef82d-fc3f-4ea1-8aaf-8d5f9cc9aaef",
+		"name": "credit-simulation-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27783199"
+	},
+	"item": [
+		{
+			"name": "Credit Simulation - Fixed",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const crypto = require('crypto-js');",
+							"",
+							"const requestBody = pm.request.body.raw",
+							"",
+							"const idempotencyKey = crypto.SHA256(requestBody).toString(crypto.enc.Hex)",
+							"",
+							"pm.request.headers.add({",
+							"    key: 'Idempotency-Key',",
+							"    value: idempotencyKey",
+							"});",
+							"",
+							"console.log(`Idempotency Key generated: ${idempotencyKey}`);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"email@email.com\",\n    \"loanAmount\": \"800000\",\n    \"customerDateOfBirth\": \"01/01/1995\",\n    \"paymentTermInMonths\": 12,\n    \"interestRateType\": \"FIXED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/credit-simulations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"credit-simulations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit Simulation - Variable",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const crypto = require('crypto-js');",
+							"",
+							"const requestBody = pm.request.body.raw",
+							"",
+							"const idempotencyKey = crypto.SHA256(requestBody).toString(crypto.enc.Hex)",
+							"",
+							"pm.request.headers.add({",
+							"    key: 'Idempotency-Key',",
+							"    value: idempotencyKey",
+							"});",
+							"",
+							"// Log para visualização no console do Postman",
+							"console.log(`Idempotency Key generated: ${idempotencyKey}`);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"email@email.com\",\n    \"loanAmount\": \"800000\",\n    \"customerDateOfBirth\": \"01/01/1995\",\n    \"paymentTermInMonths\": 12,\n    \"interestRateType\": \"VARIABLE\",\n    \"annualVariableInterestRate\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/credit-simulations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"credit-simulations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Credit Simulation - Batch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/ubuntu/Documents/test.csv"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": [],
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/credit-simulations/batch",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"credit-simulations",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
