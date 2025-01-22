@@ -9,6 +9,7 @@ A aplicação processa entradas de simulação, calcula valores baseados em regr
 * [![Java][Java]][Java-url]
 * [![Gradle][Gradle]][Gradle-url]
 * [![Swagger][Swagger]][Swagger-url]
+* [![Postgres][Postgres]][Postgres-url]
 * [![Spring][Spring]][Spring-url]
 
 ---
@@ -94,6 +95,8 @@ curl --location 'http://localhost:8080/api/v1/credit-simulations/batch' \
 [Java]: https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white
 [Java-url]: https://www.java.com/
 [Spring]: https://img.shields.io/badge/spring_boot-%236DB33F.svg?style=for-the-badge&logo=spring&logoColor=white
+[Postgres]: https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white
+[Postgres-url]: https://www.postgresql.org/
 [Spring-url]: https://spring.io/projects/spring-boot
 [Gradle]: https://img.shields.io/badge/Gradle-02303A.svg?style=for-the-badge&logo=Gradle&logoColor=white
 [Gradle-url]: https://gradle.org/
